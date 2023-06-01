@@ -1,0 +1,110 @@
+body{
+ 
+   display: grid;
+   place-items: center;
+   margin: 0%;
+   padding: 0 24px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('img/SaturnoBackground.jpg');
+}
+
+*{
+  
+    box-sizing: border-box;
+}
+
+
+
+.input-contenedor img{
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.contenedor{
+    width: 100%;
+    padding: 15px;
+}
+
+.formulario{
+    background: #fff;
+    margin-top: 150px;
+    padding: 3px;
+}
+
+h1{
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+input[type="text"],
+input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+    padding: 10px;
+    border: none;
+}
+
+.input-contenedor{
+    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+}
+
+
+.button{
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #B06AB3;
+    padding-top: 20px;
+}
+
+
+
+
+
+.button:hover{
+    background: cadetblue;
+}
+
+p{
+    text-align: center;
+}
+
+.link{
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover{
+    color: cadetblue;
+}
+
+@media(min-width:768px){
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+}

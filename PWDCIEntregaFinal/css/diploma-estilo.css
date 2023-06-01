@@ -1,0 +1,48 @@
+.diploma-contenedor{
+text-align: center;
+    border-color: rgb(242, 0, 0) rgb(65, 4, 3) rgb(242, 0, 0) rgb(65, 4, 3);
+    border-width: 20px;
+    border-style: solid;
+   color: rgb(229, 26, 26);
+    background-size: cover;
+    margin-top: 150px;
+    padding: 10px;
+ 
+   
+    background-image: url("img/SaturnoLogo.png");
+}
+
+
+.diploma-contenedor h1,h3,h2,p{
+    -webkit-text-stroke: 0.5px rgb(227, 227, 227);
+    }
+    
+
+body{
+   background-repeat: no-repeat;
+   background-size: cover;
+   
+}
+
+.imagen-diploma img{
+    width: 32%;
+    height: 32%;
+   align-content: center;
+}
+
+.pie-diploma-izq p{
+    -webkit-text-stroke: 0.1px rgb(218, 218, 218);
+}
+
+
+
+.pie-diploma-derech p{
+    -webkit-text-stroke: 0.1px rgb(218, 218, 218);
+
+}
+
+
+.fecha-terminacion p{
+    -webkit-text-stroke: 0.1px rgb(218, 218, 218);
+
+}
