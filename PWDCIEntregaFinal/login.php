@@ -5,7 +5,7 @@ error_reporting(0);
 
 if(isset($_SESSION["Nombre_Usuario"]))
 {
-    header("Location: index.php");
+    header("Location: index2.php");
 }
 
 
@@ -34,7 +34,7 @@ if(isset($_POST["submit"])){
     
         switch($_SESSION['Rol_Usuario']){
             case 'Estudiante':
-                header('location: index.php');
+                header('location: index2.php');
             break;
 
             case 'Maestro':

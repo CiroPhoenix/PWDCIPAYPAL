@@ -7,7 +7,7 @@ session_start();
 if(isset($_SESSION["Nombre_Usuario"]))
 {
 
-    header("Location: index.php");
+    header("Location: index2.php");
 }
 
 

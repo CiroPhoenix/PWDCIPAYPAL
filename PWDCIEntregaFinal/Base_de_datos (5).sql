@@ -322,7 +322,8 @@ select * from Cursos_Finalizados;
     
     SELECT MAX(ID_Usuario) FROM usuario;
     
-    
+    SELECT * FROM curso_comprados order by Titulo asc;
+       SELECT * FROM curso_comprados order by Titulo desc;
     
 truncate table curso_comprados;
 truncate table cursos_finalizados;

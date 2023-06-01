@@ -23,7 +23,7 @@ $query ="INSERT INTO comentarios (Usuario_Comentario, Curso_Comentario, Nombre_U
 $resultado = $conn->query($query);
 
 if($resultado){
-    header("Location: index.php");
+    header("Location: index2.php");
 }else{
 echo "No se Inserto";
 }

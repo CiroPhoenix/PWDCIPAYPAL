@@ -79,7 +79,7 @@ $caja=$data['total_ingresos_curso'];
         <div class="container-fluid">
       
 
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
           
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
@@ -90,7 +90,7 @@ $caja=$data['total_ingresos_curso'];
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="navbar-nav">
-           <a class="navbar-brand" href="index.php">
+           <a class="navbar-brand" href="index2.php">
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
 
@@ -98,7 +98,7 @@ $caja=$data['total_ingresos_curso'];
             
             
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="index2.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>

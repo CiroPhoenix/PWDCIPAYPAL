@@ -16,40 +16,31 @@ $query ="SELECT * from usuario";
 
 
 
-    if(isset($_POST['filtro'])){
-      switch($_POST['filtro']){
-          case "todos":
-              $sql ="SELECT * from usuario";
-              $resultado=mysqli_query($conn,$sql);
+    if(isset($_POST['Filtro'])){
+      switch($_POST['Filtro']){
+          case "0":
+            $query ="SELECT * FROM curso_comprados where Usuario =$id";
+      $resultado=mysqli_query($conn,$query);
               break;
-          case "recientes":
-              $sql ="SELECT * from usuario ORDER BY Nombre_usuario_Usuario asc";
-              $resultado=mysqli_query($conn,$sql);
+          case "1":
+            $query ="SELECT * FROM curso_comprados where Usuario =$id order by Titulo desc";
+            $resultado=mysqli_query($conn,$query);
               break;
-          case "antiguos":
-              $sql ="SELECT * from usuario ORDER BY Nombre_usuario_Usuario desc";
-              $resultado=mysqli_query($conn,$sql);
+          case "2":
+            $query ="SELECT * FROM curso_comprados where Usuario =$id order by Titulo asc";
+            $resultado=mysqli_query($conn,$query);
               break;
-              case "estudiantes":
-                $sql ="SELECT * from usuario where `Rol_Usuario` = 'Estudiante'";
-                $resultado=mysqli_query($conn,$sql);
-                break;
-                case "maestros":
-                  $sql ="SELECT * from usuario where `Rol_Usuario` = 'Maestro'";
-                  $resultado=mysqli_query($conn,$sql);
-                  break;
-                  case "administradores":
-                    $sql ="SELECT * from usuario where `Rol_Usuario` = 'Administrador'";
-                    $resultado=mysqli_query($conn,$sql);
-                    break;
+            
   
 
              
         
       }
   }else{
-      $sql ='SELECT * from usuario';
-      $resultado=mysqli_query($conn,$sql);
+   
+    
+      $query ="SELECT * FROM curso_comprados where Usuario =$id";
+      $resultado=mysqli_query($conn,$query);
   }
 
 
@@ -175,7 +166,7 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
 </div>
         <div class="container-fluid">
    
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,13 +177,13 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ">
            <li class="navbar-nav">
-           <a class="navbar-brand" href="index.php">
+           <a class="navbar-brand" href="index2.php">
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
 
            </li>
               <li  class="nav-item" >
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="index2.php">Home</a>
               </li class="nav-item">
               <li>
                 <a class="nav-link" href="#">Link</a>
@@ -304,6 +295,15 @@ border-style: solid; color:white;" >
 
  <h1>Mis Cursos</h1>
     
+ <form action="Cursos_Comprados.php" method="post">
+ <select name="Filtro" id="Filtro" >
+                        <option value="0">Filtros</option>
+                        <option value="1">Recientes</option>
+                        <option value="2">Antiguos</option>
+                        
+                    </select>
+                    <button type="submit">Filtrar</button>
+</form>
     
 
 

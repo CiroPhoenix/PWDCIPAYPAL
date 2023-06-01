@@ -57,7 +57,7 @@ $resultado = $conn->query($query);
 
 if($resultado){
 echo "Ya se ha finalizado curso";
-header("Location: kardex.php");
+header("Location: diploma.php");
 }else{
 echo "No se Inserto";
 

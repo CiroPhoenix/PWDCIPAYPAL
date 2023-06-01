@@ -1,3 +1,4 @@
+
 <?php 
 include "conexion.php";
 session_start();
@@ -8,18 +9,6 @@ if(!isset($_SESSION['Nombre_Usuario'])){
 
 
 $id = $_SESSION['ID_Usuario'];
-
-
-
-$query ="SELECT * from usuario where Rol_Usuario='Maestro'";
-    $resultado=$conn->query($query);
-    $result=$conn->query($query);
-
-
-
-
-
-
 
 $sql ="SELECT Foto_Usuario from usuario where ID_Usuario=$id";
 $mostrarfoto=mysqli_query($conn,$sql);
@@ -37,14 +26,14 @@ $mostrarfoto=mysqli_query($conn,$sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Saturno - Chat</title>
+    <title>Academia Saturno - Inicio</title>
     <link rel="stylesheet" href="css/estilos.css" />
-    <link rel="stylesheet" href="css/chat.css" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"></script>
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
    <link rel="stylesheet" 
    href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-   <script src="jquery.js"></script>
+   <script src="js/jquery2.js"></script>
 
 <style>
 
@@ -126,6 +115,13 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
 </a>
 
 
+<a href="Cursos_Comprados.php" class="sub-menu-link">
+
+  <img src="img/Cursos.png">
+  <p>Mis cursos</p>
+<span>></span>
+
+  </a>
 
 
     <a href="logout.php" class="sub-menu-link">
@@ -159,32 +155,26 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
            </li>
               <li  class="nav-item" >
                 <a class="nav-link active" aria-current="page" href="index2.php">Home</a>
-              
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Cursos
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Ptyhon</a></li>
-                  <li><a class="dropdown-item" href="#">Desarrollo De Videojuegos</a></li>
-                  <li><a class="dropdown-item" href="#">Dibujo</a></li>
-                  <li><a class="dropdown-item" href="#">Graficas 3D</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Otros</a></li>
-                </ul>
+              </li class="nav-item">
+              <li>
+                <a class="nav-link" href="Carrito.php">Carrito</a>
               </li>
+              <li>
+                <a class="nav-link" href="ChatMaestro.php">Mensajes</a>
+              </li>
+              <li>
+                <a class="nav-link" href="Kardex.php">Kardex</a>
+              </li>
+              
+              
+              
               <div class="col-md-6">
 
 
 <div class="input-group">
-  
-<form action="" method="get">
-<input type="text"  placeholder="Buscar Usuario" class="form-control" name="busqueda" id="inp">
+<input type="text"  placeholder="¿Que te gustaria aprender?" class="form-control" id="inp">
 <div class="input-group-append">
-<button type="submit" class="btn btn-dark" name="search" id="search" >Buscar</button>
-</form>
-
-
+<button type="button" class="btn btn-dark" id="search" >Buscar</button>
 </div>
 </div>
 </div>
@@ -245,78 +235,123 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
 
 
 <div class="container p-5 mt-2" style="background-image: url('img/Galaxia.jpg'); background-repeat: no-repeat; background-size: cover;   border-color: rgb(255, 102, 151) rgb(120, 0, 74) rgb(255, 102, 151) rgb(120, 0, 74); border-width: 35px;
-border-style: solid; color:white;" >
+border-style: solid;" >
+  <div class="row d-flex justify-content-center">
+
+  <div class="jumbotron">
+		<div class="input-group mb-3">
+		  <input type="text" class="form-control" id="txtbusca_curso" placeholder="Buscar Cursos o Maestros" aria-label="Buscar" aria-describedby="basic-addon2">
+		  <div class="input-group-append">
+		   
+		  </div>
+      
+		</div>
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="salida2">Resultados</div>
+		</div>
+
+<div class="cart" >
+  <div class="pt-3 pl-0 pb-0 pr-0" style="height: flex; width: auto;">
+  <i class="fas fa-shopping-cart fa-2x ml-md-5" style="color:white;">  </i>
+  </div>
+  
+  <span style="background-color: purple;" class="badge badge-sucess mt-0 align-self-start" id="cart_item_count" style="margin-left: -25
+  px; margin-top: -5px;">0</span>
+  
+   </div>
+  
  
 
 
-    
-    
-    <?php 
+
+
+  
 
 
 
- 
-    
+</div>
+<div class="row p-5" id="panel">
+<h1 class="display-3 text-center text-muted" id="not_find_any_thing"></h1>
+
+
+<div class="contenedor-filtro" style="margin-left: 120px;">
+
+  <div style="margin-top: 5px;">
+
+
+<div class="imagenes-filtro">
+
+
+<?php 
+
+
+
+    $query ="SELECT * FROM curso";
+    $resultado=$conn->query($query);
+
     while($filas = $resultado->fetch_assoc()){
 
     ?>
 
-<table class="content-table">
-   
-   <tbody>
-       <tr>
+
+    <div class="col-md-3 mt-5" >
+ 
+
+      <div class="cards p-2">
         
-       <td><img height="100px" width="100px" src= "data:image/jpeg;base64, <?php echo base64_encode($filas['Foto_Usuario']); ?> "/></td>
-
-       <td><?php echo $filas['Nombre_usuario_Usuario']?></td>  
+      <img class="card-img-top" src= "data:image/jpeg;base64, <?php echo base64_encode($filas['Foto_Curso2']); ?> " alt=""/>
+        
     
-       <h5><?php echo $filas['Correo_Usuario']?></h5> 
+        
+        <div class="card-body">
+    <div class="d-flex justify-content-between">
+    
+      <h5  class="card-title"><?php echo $filas['Titulo_Curso']?></h5>
+    
+    <span class="text-success">$<?php echo $filas['Costo_Curso']?>MX</span>
+    </div>
 
-<td><a href="MensajesMaestro.php?ID_Usuario=<?php echo $filas['ID_Usuario']?>">Chatear</a></td>
-       </tr>
-     
-       </tr>
+    <div class="d-flex justify-content-between">
    
-      
-   </tbody>
-</table>
+    <a  class="bg-dark text-white text-center pl-2 pr-2" href="guardar_carrito.php?ID_Curso=<?php echo $filas['ID_Curso']?>">Agregar Carrito</a>
+   
+    <a  class="bg-dark text-white text-center pl-2 pr-2" href="curso-detalle.php?ID_Curso=<?php echo $filas['ID_Curso']?>">Ver Curso</a>
+    <div class="bg-dark text-white text-center pl-2 pr-2">Lista de deseo</div>
+    </div>
+        </div>
+      </div>
+    </div>
     <?php
 
-    }
-    
-
-    ?>
+}
 
 
+?>
 
 
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	</div>
-
-	<script>
+<script>
 		$(document).ready(function(){
-			$("#txtbusca").keyup(function(){
-				var parametros="txtbusca="+$(this).val()
+			$("#txtbusca_curso").keyup(function(){
+				var parametros="txtbusca_curso="+$(this).val()
 				$.ajax({
 	                data:  parametros,
-	                url:   'buscador.php',
+	                url:   'buscador_curso.php',
 	                type:  'post',
 	                beforeSend: function () { },
 	                success:  function (response) {                	
-	                    $(".salida").html(response);
+	                    $(".salida2").html(response);
 	                },
 	                error:function(){
 	                	alert("error")
@@ -326,26 +361,6 @@ border-style: solid; color:white;" >
 		})
 	</script>
 
-
-
-
-
- 
-  
-  
-
-  
- 
-  </div>
-
-
-
-  
-
-
-
-
-</div>
 
 </div>
 
@@ -401,6 +416,30 @@ absolute;z-index: 1;top: 80px;overflow: auto;">
 
 </div>
 
+<form class="contact-form" id="Comentario_desarrollador">
+    <legend>¿Que te parece nuestra página? Envíanos tus comentarios</legend>
+    <br> 
+    <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios (que no exeda los 255 caracteres)"
+    data-pattern="^.{1,255}$" required id="Comentario_usuario"></textarea>
+    <br> <br>
+    <input type="submit" value="Enviar">
+  </form>
+  <script>
+    const form = document.getElementById("Comentario_desarrollador")
+    const comentario_usuario = document.getElementById("Comentario_usuario")
+    form.addEventListener("submit", e=>{
+     e.preventDefault()
+     fetch("https://formsubmit.co/ajax/rayfilemon@gmail.com",{
+      method: "POST",
+      body: new FormData(e.target)
+     })
+     .then(res => res.ok ? res.json() : Promise.reject(res))
+     .then(json => {
+      console.log(json);
+     });
+})
+  </script>
+
 <script>
 
   let subMenu = document.getElementById("subMenu");
@@ -413,6 +452,8 @@ subMenu.classList.toggle("open-menu");
 
 
 </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

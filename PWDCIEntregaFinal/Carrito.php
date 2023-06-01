@@ -175,7 +175,7 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
 </div>
         <div class="container-fluid">
    
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="index2.php">
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,13 +186,13 @@ while($foto=mysqli_fetch_assoc($mostrarfoto)){
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ">
            <li class="navbar-nav">
-           <a class="navbar-brand" href="index.php">
+           <a class="navbar-brand" href="index2.php">
             <img src="img/SaturnoLogo.png" alt="logo" width="150px">
           </a>
 
            </li>
               <li  class="nav-item" >
-                <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                <a class="nav-link active" aria-current="page" href="index2.php">Home</a>
               </li class="nav-item">
               <li>
                 <a class="nav-link" href="#">Link</a>

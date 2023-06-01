@@ -224,7 +224,6 @@ CREATE TABLE `curso_comprados` (
 
 LOCK TABLES `curso_comprados` WRITE;
 /*!40000 ALTER TABLE `curso_comprados` DISABLE KEYS */;
-INSERT INTO `curso_comprados` VALUES (3,1,900,'Anne',' Boonchuy','  Jr','Graficas en 3D',1,'2023-05-31 22:39:13'),(3,2,345,'Anne',' Boonchuy','  Jr','Curso De Ilustracion',1,'2023-05-31 22:38:37');
 /*!40000 ALTER TABLE `curso_comprados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +255,6 @@ CREATE TABLE `cursos_finalizados` (
 
 LOCK TABLES `cursos_finalizados` WRITE;
 /*!40000 ALTER TABLE `cursos_finalizados` DISABLE KEYS */;
-INSERT INTO `cursos_finalizados` VALUES (3,2,'Curso De Ilustracion',3,'2023-05-31 16:38:37','2023-05-31 16:38:46','2023-05-31 22:39:00'),(3,1,'Graficas en 3D',1,'2023-05-31 16:39:13','2023-05-31 16:38:46','2023-05-31 22:42:16');
 /*!40000 ALTER TABLE `cursos_finalizados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -288,7 +286,6 @@ CREATE TABLE `diplomado` (
 
 LOCK TABLES `diplomado` WRITE;
 /*!40000 ALTER TABLE `diplomado` DISABLE KEYS */;
-INSERT INTO `diplomado` VALUES (3,2,'Anne','   Jr',' Boonchuy','Curso De Ilustracion','2023-05-31 22:39:00'),(3,1,'Anne','   Jr',' Boonchuy','Graficas en 3D','2023-05-31 22:42:00'),(3,1,'Anne','   Jr',' Boonchuy','Graficas en 3D','2023-05-31 22:42:16');
 /*!40000 ALTER TABLE `diplomado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,7 +313,7 @@ CREATE TABLE `nivel_ultimovisto` (
 
 LOCK TABLES `nivel_ultimovisto` WRITE;
 /*!40000 ALTER TABLE `nivel_ultimovisto` DISABLE KEYS */;
-INSERT INTO `nivel_ultimovisto` VALUES (3,3,'2023-05-31 22:38:46'),(2,3,'2023-05-31 22:38:51'),(1,3,'2023-05-31 22:38:56'),(1,3,'2023-05-31 22:41:41'),(5,3,'2023-05-31 22:42:06'),(4,3,'2023-05-31 22:42:10'),(4,3,'2023-05-31 22:42:14');
+INSERT INTO `nivel_ultimovisto` VALUES (3,3,'2023-05-31 22:38:46'),(2,3,'2023-05-31 22:38:51'),(1,3,'2023-05-31 22:38:56'),(1,3,'2023-05-31 22:41:41'),(5,3,'2023-05-31 22:42:06'),(4,3,'2023-05-31 22:42:10'),(4,3,'2023-05-31 22:42:14'),(4,3,'2023-06-01 12:39:24');
 /*!40000 ALTER TABLE `nivel_ultimovisto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,7 +378,7 @@ CREATE TABLE `subniveles` (
 
 LOCK TABLES `subniveles` WRITE;
 /*!40000 ALTER TABLE `subniveles` DISABLE KEYS */;
-INSERT INTO `subniveles` VALUES (1,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','video/mp4','video/mp4',3,3,2,0,'2023-05-31 22:37:08'),(2,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','video/mp4','video/mp4',4,3,2,1,'2023-05-31 22:37:15'),(3,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','video/mp4','video/mp4',6,3,2,1,'2023-05-31 22:37:22'),(4,'Niveles/ Henry89/Screen Recording - Made with FlexClip (3).mp4','Screen Recording - Made with FlexClip (3).mp4','video/mp4','video/mp4',1,3,1,0,'2023-05-31 22:40:48'),(5,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_AnilloyEsfera_1.mp4','1812042_CiroSergioLedezmaGarcia_AnilloyEsfera_1.mp4','video/mp4','video/mp4',2,3,1,1,'2023-05-31 22:41:12');
+INSERT INTO `subniveles` VALUES (1,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','video/mp4','video/mp4',3,3,2,0,'2023-05-31 22:37:08'),(2,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','video/mp4','video/mp4',4,3,2,1,'2023-05-31 22:37:15'),(3,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','1812042_CiroSergioLedezmaGarcia_VideoDelPIA.mp4','video/mp4','video/mp4',6,3,2,1,'2023-05-31 22:37:22'),(4,'Niveles/ Henry89/Screen Recording - Made with FlexClip (3).mp4','Screen Recording - Made with FlexClip (3).mp4','video/mp4','video/mp4',1,3,1,1,'2023-05-31 22:40:48'),(5,'Niveles/ Henry89/1812042_CiroSergioLedezmaGarcia_AnilloyEsfera_1.mp4','1812042_CiroSergioLedezmaGarcia_AnilloyEsfera_1.mp4','video/mp4','video/mp4',2,3,1,1,'2023-05-31 22:41:12');
 /*!40000 ALTER TABLE `subniveles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -671,4 +668,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-31 16:43:55
+-- Dump completed on 2023-06-01  7:17:44
