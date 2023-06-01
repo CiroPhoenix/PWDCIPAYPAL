@@ -345,7 +345,7 @@ while($filas = $resultado_tabla_alumno->fetch_assoc()){
 <td><?php echo $caja_nivel?></td>
        
          <td>$<?php echo $filas['Costo']?></td>
-         <td>Hola</td>
+         <td>Paypal</td>
        
    
        </tr>
